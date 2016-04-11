@@ -79,3 +79,30 @@ fos_user:
          confirmation:
              enabled:    true
              template:   FOSUserBundle:Registration:email.txt.twig
+# EasyAdmin
+easy_admin:
+   site_name:   XpertCAD
+   design:
+      brand_color:   'orange'
+   entities:
+      LxCustomers:
+         label: app.menu.LxCustomers
+         class: AppBundle\Entity\LxCustomers
+         list:
+            fields:
+              - { property: 'id', label:'ID' }
+              - { property: 'customername', label:'Nombre del cliente' }
+              - { property: 'customeraddresscountryname', label:'País' }
+              - { property: 'customerstatus', label:'Estatus' }
+
+      LxUsers:
+         label: app.menu.LxUsers
+         class: AppBundle\Entity\LxUsers
+         list:
+            fields:
+              - { property: 'id', label:'ID' }
+              - { property: 'email', label:'Correo' }
+              - { property: 'userfullname', label:'Nombre' }
+              - { property: 'userstatus', label:'Estatus' }
+         form:
+            fields: ['enabled','email','userfullname','roles']
