@@ -1,0 +1,96 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LxCustomerDefaultcourses
+ *
+ * @ORM\Table(name="lx_customer_defaultcourses")
+ * @ORM\Entity
+ */
+class LxCustomerDefaultcourses
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regUpdateDate", type="datetime", nullable=true)
+     */
+    private $regupdatedate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUpdateUserId", type="integer", nullable=true)
+     */
+    private $regupdateuserid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="customer_id", type="integer", nullable=true)
+     */
+    private $customerId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="campus_id", type="integer", nullable=true)
+     */
+    private $campusId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course_id", type="integer", nullable=true)
+     */
+    private $courseId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseName", type="string", length=255, nullable=true)
+     */
+    private $coursename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=1, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=45, nullable=true)
+     */
+    private $type;
+
+
+}
+

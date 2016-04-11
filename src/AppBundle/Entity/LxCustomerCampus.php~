@@ -1,0 +1,99 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LxCustomerCampus
+ *
+ * @ORM\Table(name="lx_customer_campus", indexes={@ORM\Index(name="fk_customer_id_idx", columns={"customer_id"})})
+ * @ORM\Entity
+ */
+class LxCustomerCampus
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=true)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regUpdateDate", type="datetime", nullable=true)
+     */
+    private $regupdatedate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUpdateUserId", type="integer", nullable=true)
+     */
+    private $regupdateuserid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campusName", type="string", length=255, nullable=true)
+     */
+    private $campusname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campusAddress", type="string", length=255, nullable=true)
+     */
+    private $campusaddress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campusPhone", type="string", length=20, nullable=true)
+     */
+    private $campusphone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campusExt", type="string", length=20, nullable=true)
+     */
+    private $campusext;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campusStatus", type="string", length=1, nullable=true)
+     */
+    private $campusstatus;
+
+    /**
+     * @var \LxCustomers
+     *
+     * @ORM\ManyToOne(targetEntity="LxCustomers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
+     * })
+     */
+    private $customer;
+
+
+}
+

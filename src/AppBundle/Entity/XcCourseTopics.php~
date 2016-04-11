@@ -1,0 +1,127 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * XcCourseTopics
+ *
+ * @ORM\Table(name="xc_course_topics", indexes={@ORM\Index(name="fk_lesson_id_idx", columns={"lesson_id"})})
+ * @ORM\Entity
+ */
+class XcCourseTopics
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regUpdateDate", type="datetime", nullable=true)
+     */
+    private $regupdatedate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUpdateUserId", type="integer", nullable=true)
+     */
+    private $regupdateuserid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="topicOrder", type="integer", nullable=true)
+     */
+    private $topicorder;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="topicName", type="string", length=255, nullable=true)
+     */
+    private $topicname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="topicDescription", type="text", length=65535, nullable=true)
+     */
+    private $topicdescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="topicType", type="string", length=255, nullable=true)
+     */
+    private $topictype;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="topicImage", type="string", length=255, nullable=true)
+     */
+    private $topicimage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="topicFileName", type="string", length=255, nullable=true)
+     */
+    private $topicfilename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="topicFileSize", type="string", length=50, nullable=true)
+     */
+    private $topicfilesize;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="topicVideoLength", type="time", nullable=true)
+     */
+    private $topicvideolength;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="topicStatus", type="string", length=1, nullable=true)
+     */
+    private $topicstatus;
+
+    /**
+     * @var \XcCourseLessons
+     *
+     * @ORM\ManyToOne(targetEntity="XcCourseLessons")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="lesson_id", referencedColumnName="id")
+     * })
+     */
+    private $lesson;
+
+
+}
+

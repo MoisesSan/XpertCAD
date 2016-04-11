@@ -1,0 +1,99 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * XcCourseLessons
+ *
+ * @ORM\Table(name="xc_course_lessons", indexes={@ORM\Index(name="fk_course_id_idx", columns={"course_id"})})
+ * @ORM\Entity
+ */
+class XcCourseLessons
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regUpdateDate", type="datetime", nullable=true)
+     */
+    private $regupdatedate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUpdateUserId", type="integer", nullable=true)
+     */
+    private $regupdateuserid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lessonOrder", type="integer", nullable=true)
+     */
+    private $lessonorder;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lessonName", type="string", length=255, nullable=true)
+     */
+    private $lessonname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lessonDescription", type="text", length=65535, nullable=true)
+     */
+    private $lessondescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lessonImage", type="string", length=255, nullable=true)
+     */
+    private $lessonimage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lessonStatus", type="string", length=1, nullable=true)
+     */
+    private $lessonstatus;
+
+    /**
+     * @var \XcCourses
+     *
+     * @ORM\ManyToOne(targetEntity="XcCourses")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="course_id", referencedColumnName="id")
+     * })
+     */
+    private $course;
+
+
+}
+

@@ -1,0 +1,299 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LxCustomers
+ *
+ * @ORM\Table(name="lx_customers")
+ * @ORM\Entity
+ */
+class LxCustomers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate = '0000-00-00 00:00:00';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regUpdateDate", type="datetime", nullable=true)
+     */
+    private $regupdatedate = '0000-00-00 00:00:00';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUpdateUserId", type="integer", nullable=true)
+     */
+    private $regupdateuserid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerName", type="string", length=255, nullable=false)
+     */
+    private $customername = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressStreet", type="string", length=255, nullable=true)
+     */
+    private $customeraddressstreet = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressNumber", type="string", length=100, nullable=true)
+     */
+    private $customeraddressnumber = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressNumberInt", type="string", length=100, nullable=true)
+     */
+    private $customeraddressnumberint;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressNeigborhood", type="string", length=255, nullable=true)
+     */
+    private $customeraddressneigborhood = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressCity", type="string", length=255, nullable=true)
+     */
+    private $customeraddresscity = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressState", type="string", length=100, nullable=true)
+     */
+    private $customeraddressstate = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressZip", type="string", length=10, nullable=true)
+     */
+    private $customeraddresszip = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressCountry", type="string", length=50, nullable=true)
+     */
+    private $customeraddresscountry;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerAddressCountryName", type="string", length=200, nullable=true)
+     */
+    private $customeraddresscountryname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone1Area", type="string", length=20, nullable=true)
+     */
+    private $customerphone1area = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone1Number", type="string", length=20, nullable=true)
+     */
+    private $customerphone1number = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone1Ext", type="string", length=10, nullable=true)
+     */
+    private $customerphone1ext = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone1Note", type="string", length=255, nullable=true)
+     */
+    private $customerphone1note = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone2Area", type="string", length=20, nullable=true)
+     */
+    private $customerphone2area = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone2Number", type="string", length=20, nullable=true)
+     */
+    private $customerphone2number = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone2Ext", type="string", length=10, nullable=true)
+     */
+    private $customerphone2ext = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone2Note", type="string", length=255, nullable=true)
+     */
+    private $customerphone2note = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerPhone3Area", type="string", length=20, nullable=true)
+     */
+    private $customerphone3area = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerEmail1", type="string", length=255, nullable=true)
+     */
+    private $customeremail1 = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerEmail2", type="string", length=255, nullable=true)
+     */
+    private $customeremail2 = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerWebsite", type="string", length=255, nullable=true)
+     */
+    private $customerwebsite = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CustomerNote", type="text", length=65535, nullable=true)
+     */
+    private $customernote;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="BrandDomains", type="text", length=65535, nullable=true)
+     */
+    private $branddomains;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="BrandLogo", type="string", length=255, nullable=true)
+     */
+    private $brandlogo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="BrandUrl", type="string", length=255, nullable=true)
+     */
+    private $brandurl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AllianceID", type="string", length=50, nullable=true)
+     */
+    private $allianceid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="AllianceStartDate", type="datetime", nullable=false)
+     */
+    private $alliancestartdate = '0000-00-00 00:00:00';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="AllianceEndDate", type="datetime", nullable=false)
+     */
+    private $allianceenddate = '0000-00-00 00:00:00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AllianceStudent", type="text", length=65535, nullable=true)
+     */
+    private $alliancestudent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AllianceProfessor", type="text", length=65535, nullable=true)
+     */
+    private $allianceprofessor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AllianceGraduate", type="text", length=65535, nullable=true)
+     */
+    private $alliancegraduate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AllianceEngineer", type="text", length=65535, nullable=true)
+     */
+    private $allianceengineer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="loginMode", type="string", length=1, nullable=false)
+     */
+    private $loginmode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="customerStatus", type="string", length=1, nullable=false)
+     */
+    private $customerstatus;
+
+
+}
+

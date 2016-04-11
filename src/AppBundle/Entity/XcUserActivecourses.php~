@@ -1,0 +1,134 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * XcUserActivecourses
+ *
+ * @ORM\Table(name="xc_user_activecourses", indexes={@ORM\Index(name="fk_active_course_id_idx", columns={"course_id"})})
+ * @ORM\Entity
+ */
+class XcUserActivecourses
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer", nullable=true)
+     */
+    private $userId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="group_id", type="integer", nullable=true)
+     */
+    private $groupId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseName", type="string", length=255, nullable=true)
+     */
+    private $coursename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseProgress", type="decimal", precision=10, scale=2, nullable=true)
+     */
+    private $courseprogress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=1, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="startDate", type="datetime", nullable=true)
+     */
+    private $startdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="endDate", type="datetime", nullable=true)
+     */
+    private $enddate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="finishDate", type="datetime", nullable=true)
+     */
+    private $finishdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="firstActivity", type="datetime", nullable=true)
+     */
+    private $firstactivity;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="lastActivity", type="datetime", nullable=true)
+     */
+    private $lastactivity;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="evalDate", type="datetime", nullable=true)
+     */
+    private $evaldate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="evalTotal", type="decimal", precision=10, scale=2, nullable=true)
+     */
+    private $evaltotal;
+
+    /**
+     * @var \XcCourses
+     *
+     * @ORM\ManyToOne(targetEntity="XcCourses")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="course_id", referencedColumnName="id")
+     * })
+     */
+    private $course;
+
+
+}
+

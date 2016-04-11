@@ -1,0 +1,92 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * XcCourseFiles
+ *
+ * @ORM\Table(name="xc_course_files", indexes={@ORM\Index(name="fk_topic_id_idx", columns={"topic_id"})})
+ * @ORM\Entity
+ */
+class XcCourseFiles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regUpdateDate", type="datetime", nullable=true)
+     */
+    private $regupdatedate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUpdateUserId", type="integer", nullable=true)
+     */
+    private $regupdateuserid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fileName", type="string", length=255, nullable=true)
+     */
+    private $filename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fileDescription", type="text", length=65535, nullable=true)
+     */
+    private $filedescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fileFileName", type="string", length=255, nullable=true)
+     */
+    private $filefilename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fileStatus", type="string", length=1, nullable=true)
+     */
+    private $filestatus;
+
+    /**
+     * @var \XcCourseTopics
+     *
+     * @ORM\ManyToOne(targetEntity="XcCourseTopics")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="topic_id", referencedColumnName="id")
+     * })
+     */
+    private $topic;
+
+
+}
+

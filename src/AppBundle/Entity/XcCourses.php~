@@ -1,0 +1,166 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * XcCourses
+ *
+ * @ORM\Table(name="xc_courses")
+ * @ORM\Entity
+ */
+class XcCourses
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regUpdateDate", type="datetime", nullable=true)
+     */
+    private $regupdatedate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUpdateUserId", type="integer", nullable=true)
+     */
+    private $regupdateuserid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseName", type="string", length=255, nullable=true)
+     */
+    private $coursename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseDescription", type="string", length=255, nullable=true)
+     */
+    private $coursedescription;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseDuration", type="integer", nullable=true)
+     */
+    private $courseduration;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseValidity", type="integer", nullable=true)
+     */
+    private $coursevalidity;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coursePrerequisites", type="text", length=65535, nullable=true)
+     */
+    private $courseprerequisites;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseObjectives", type="text", length=65535, nullable=true)
+     */
+    private $courseobjectives;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceMXGeneral", type="string", length=50, nullable=true)
+     */
+    private $pricemxgeneral;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceMXProf", type="string", length=50, nullable=true)
+     */
+    private $pricemxprof;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceMXStudent", type="string", length=50, nullable=true)
+     */
+    private $pricemxstudent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceMXEngineer", type="string", length=50, nullable=true)
+     */
+    private $pricemxengineer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceUSGeneral", type="string", length=50, nullable=true)
+     */
+    private $priceusgeneral;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceUSProf", type="string", length=50, nullable=true)
+     */
+    private $priceusprof;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceUSStudent", type="string", length=50, nullable=true)
+     */
+    private $priceusstudent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="priceUSEngineer", type="string", length=50, nullable=true)
+     */
+    private $priceusengineer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseStatus", type="string", length=1, nullable=true)
+     */
+    private $coursestatus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="couseImage", type="string", length=255, nullable=true)
+     */
+    private $couseimage;
+
+
+}
+

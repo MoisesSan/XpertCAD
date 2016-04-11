@@ -1,0 +1,78 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * XcTopicEvaluation
+ *
+ * @ORM\Table(name="xc_topic_evaluation", indexes={@ORM\Index(name="fk_topic_eval_id_idx", columns={"topic_id"})})
+ * @ORM\Entity
+ */
+class XcTopicEvaluation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="positiveEval", type="string", length=1, nullable=true)
+     */
+    private $positiveeval;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="negativeEval", type="string", length=1, nullable=true)
+     */
+    private $negativeeval;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="text", length=65535, nullable=true)
+     */
+    private $comment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=1, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \XcCourseTopics
+     *
+     * @ORM\ManyToOne(targetEntity="XcCourseTopics")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="topic_id", referencedColumnName="id")
+     * })
+     */
+    private $topic;
+
+
+}
+

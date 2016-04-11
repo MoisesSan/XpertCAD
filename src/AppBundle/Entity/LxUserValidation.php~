@@ -1,0 +1,68 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LxUserValidation
+ *
+ * @ORM\Table(name="lx_user_validation")
+ * @ORM\Entity
+ */
+class LxUserValidation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regDate", type="datetime", nullable=false)
+     */
+    private $regdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regUserId", type="integer", nullable=true)
+     */
+    private $reguserid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="customer_id", type="integer", nullable=true)
+     */
+    private $customerId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="group_id", type="integer", nullable=true)
+     */
+    private $groupId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user_enrollment", type="string", length=100, nullable=true)
+     */
+    private $userEnrollment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user_email", type="string", length=100, nullable=true)
+     */
+    private $userEmail;
+
+
+}
+
